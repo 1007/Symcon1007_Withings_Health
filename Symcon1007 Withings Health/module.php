@@ -16,6 +16,14 @@
 			$this->RegisterPropertyInteger("Intervall", 3600);
 			$this->RegisterTimer("WTH_UpdateTimer", 3600000, 'WTH_Update($_IPS["TARGET"]);');
 
+			$this->RegisterPropertyString("AccessToken", "");
+			$this->RegisterPropertyString("RefreshToken", "");
+			$this->RegisterPropertyString("UserID", "");
+
+			$this->RegisterPropertyString("User", "XXX"); 
+			
+			$this->RegisterPropertyString("CallbackURL", "");
+
 			//Never delete this line!
 			parent::Create();
 
