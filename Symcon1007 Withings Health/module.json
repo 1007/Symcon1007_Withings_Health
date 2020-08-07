@@ -1,0 +1,12 @@
+{
+    "id": "{3CA5F42B-EE9C-0E01-F240-5A49F54C105D}",
+    "name": "Withings Health",
+    "type": 3,
+    "vendor": "Withings",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "WTH",
+    "url": ""
+}
