@@ -1,0 +1,16 @@
+{
+    "id": "{3FE3F01C-1D9D-CB49-6934-7D5AADBE4F60}",
+    "name": "Withings Health IO",
+    "type": 1,
+    "vendor": "Withings",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [
+        "{178052EF-1D7D-19A3-8C1B-FCE922D2A3EA}"
+    ],
+    "implemented": [
+        "{30E5CE80-1991-CE35-75E1-14886B5EB834}"
+    ],
+    "prefix": "WTH",
+    "url": ""
+}
