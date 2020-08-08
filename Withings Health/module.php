@@ -23,13 +23,7 @@
 
 		public function Send(string $Text)
 		{
-			$this->SendDebug(__FUNCTION__."[".__LINE__."]","Starte Webseite zum einloggen bei Withings",0);
-			$this->SendDataToParent(json_encode(Array("DataID" => "{018EF6B5-AB94-40C6-AA53-46943E824ACF}", "Buffer" => $Text)));
-			// $this->SendDataToParent(json_encode(Array("DataID" => "{4A550680-80C5-4465-971E-BBF83205A02B}", "Buffer" => $Text,'EventID' => 123)));
-			
-			
-		
-		
+			$this->SendDataToParent(json_encode(Array("DataID" => "{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}", "Buffer" => $Text)));
 		}
 
 		public function ReceiveData($JSONString)
