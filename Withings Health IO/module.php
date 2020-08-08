@@ -19,10 +19,22 @@
 			parent::ApplyChanges();
 		}
 
+
+		public function ReceiveData($JSONString)
+		{
+
+			$this->SendDebug(__FUNCTION__."[".__LINE__."]","Starte Webseite zum einloggen bei Withings",0);
+			$data = json_decode($JSONString);
+			$this->LogMessage("IO FRWD", utf8_decode($data->Buffer));
+		}
+
+
 		public function ForwardData($JSONString)
 		{
+
+			$this->SendDebug(__FUNCTION__."[".__LINE__."]","Starte Webseite zum einloggen bei Withings",0);
 			$data = json_decode($JSONString);
-			IPS_LogMessage("IO FRWD", utf8_decode($data->Buffer));
+			$this->LogMessage("IO FRWD", utf8_decode($data->Buffer));
 		}
 
 		public function Send(string $Text)
