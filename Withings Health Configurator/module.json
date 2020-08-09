@@ -1,0 +1,16 @@
+{
+    "id": "{68A76586-EF10-D4E8-2048-2EBC0BB4391A}",
+    "name": "Withings Health Konfigurator",
+    "type": 4,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [
+        "{72C77EA7-F69C-70CE-30C0-8F33179E7BE6}"
+    ],
+    "childRequirements": [],
+    "implemented": [
+        "{33C19E7A-3386-09D7-DF5D-FE75EE51FF09}"
+    ],
+    "prefix": "WTH",
+    "url": ""
+}

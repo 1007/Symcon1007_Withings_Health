@@ -1,0 +1,16 @@
+{
+    "id": "{6C9D109E-CFCF-A6ED-9F8A-345CAE1A7626}",
+    "name": "Withings Health Device",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [
+        "{72C77EA7-F69C-70CE-30C0-8F33179E7BE6}"
+    ],
+    "childRequirements": [],
+    "implemented": [
+        "{33C19E7A-3386-09D7-DF5D-FE75EE51FF09}"
+    ],
+    "prefix": "WTH",
+    "url": ""
+}

@@ -1,12 +1,12 @@
 <?php
-	class WithingsHealth extends IPSModule {
+	class WithingsHealthDevice extends IPSModule {
 
 		public function Create()
 		{
 			//Never delete this line!
 			parent::Create();
 
-			$this->ConnectParent("{6179ED6A-FC31-413C-BB8E-1204150CF376}");
+			$this->ConnectParent("{F618B14A-D8D1-1CD1-9B82-B81A547E922E}");
 		}
 
 		public function Destroy()

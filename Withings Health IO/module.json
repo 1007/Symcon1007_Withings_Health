@@ -1,15 +1,15 @@
 {
-    "id": "{3FE3F01C-1D9D-CB49-6934-7D5AADBE4F60}",
+    "id": "{F618B14A-D8D1-1CD1-9B82-B81A547E922E}",
     "name": "Withings Health IO",
     "type": 1,
-    "vendor": "Withings",
+    "vendor": "",
     "aliases": [],
     "parentRequirements": [],
     "childRequirements": [
-        "{178052EF-1D7D-19A3-8C1B-FCE922D2A3EA}"
+        "{33C19E7A-3386-09D7-DF5D-FE75EE51FF09}"
     ],
     "implemented": [
-        "{30E5CE80-1991-CE35-75E1-14886B5EB834}"
+        "{72C77EA7-F69C-70CE-30C0-8F33179E7BE6}"
     ],
     "prefix": "WTH",
     "url": ""
