@@ -1,6 +1,15 @@
 {
     "translations": {
         "de": {
+
+            "Timer not exist"       : "Timer existiert nicht",
+            "Timer deleted"         : "Timer geloescht",
+            "Timer delete error"   : "Fehler bei Timer loeschen",
+            
+            "Request Authentification" : "Authentifizierung anfordern",
+            "Update Data" : "Daten aktualisieren",
+            "Refresh Tokens" : "Token aktualisieren",
+
             "Translation 1": "Übersetzung 1",
             "Translation 2": "Übersetzung 2"
         }
