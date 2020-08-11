@@ -6,6 +6,8 @@
 			//Never delete this line!
 			parent::Create();
 
+			$this->RegisterPropertyBoolean("Modulaktiv", true);
+			$this->RegisterPropertyBoolean("Logging", false);
 			$this->RegisterPropertyString("Devices", "");	
 
 			$this->ConnectParent("{F618B14A-D8D1-1CD1-9B82-B81A547E922E}");		// IO
