@@ -1,0 +1,16 @@
+{
+    "id": "{E6875D26-409C-406A-9AAB-76401AD7755B}",
+    "name": "Withings Health Actifity",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [
+        "{72C77EA7-F69C-70CE-30C0-8F33179E7BE6}"
+    ],
+    "childRequirements": [],
+    "implemented": [
+        "{75E6A836-6665-43AA-AC24-62975AF71171}"
+    ],
+    "prefix": "WTH",
+    "url": ""
+}

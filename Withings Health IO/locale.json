@@ -10,6 +10,14 @@
             "Update Data" : "Daten aktualisieren",
             "Refresh Tokens" : "Token aktualisieren",
 
+
+            "Settings": "Einstellungen",
+
+            "Notification": "Benachrichtigungen",
+
+            "Expert Parameters": "Experten Einstellungen",
+            "Aktivate more Debug": "Aktiviere erweiterte Debug Anzeige",
+
             "Translation 1": "Übersetzung 1",
             "Translation 2": "Übersetzung 2"
         }
