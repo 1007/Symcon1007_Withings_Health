@@ -25,7 +25,11 @@
 			$this->RegisterPropertyString("RefreshToken", "");
 			$this->RegisterPropertyString("UserID", "");
 
-			$this->RegisterPropertyString("User", "XXX"); 
+			$this->RegisterPropertyString("User", "XXX");
+			$this->RegisterPropertyString("Username", "");
+			$this->RegisterPropertyInteger("Usergroesse", 0); 
+
+
 			
 			$this->RegisterPropertyString("CallbackURL", "");
 
@@ -240,8 +244,6 @@
 				IPS_ApplyChanges($this->InstanceID);
 				}
 				
-
-
 			$token = $data->access_token;
 
 			$this->SendDebug(__FUNCTION__."[".__LINE__."]", "Access Token :".$token, 0);
@@ -302,8 +304,8 @@
 
 			if ( $this->ReadPropertyString("AccessToken") == "" )
 				{
-				$this->SendDebug(__FUNCTION__."[".__LINE__."]","AccessToken leer" ,0);
-				$this->SetStatus(204);	
+				// $this->SendDebug(__FUNCTION__."[".__LINE__."]","AccessToken leer" ,0);
+				// $this->SetStatus(204);	
 				return;
 				}
 
@@ -381,28 +383,28 @@
 		//******************************************************************************
 		//	Curl Abfrage ausfuehren
 		//******************************************************************************
-		function DoCurl($url,$debug=false)
-		{
+		protected function DoCurl($url,$debug=false)
+			{
 
-		$debug = true;
+			$debug = true;
 
-		if($debug == true)
-			$this->SendDebug(__FUNCTION__."[".__LINE__."]",$url,0);
+			if($debug == true)
+				$this->SendDebug(__FUNCTION__."[".__LINE__."]",$url,0);
 
-		$curl = curl_init($url);
+			$curl = curl_init($url);
 
-		curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
+			curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
 
-		$output = curl_exec($curl);
+			$output = curl_exec($curl);
 
-		curl_close($curl);
+			curl_close($curl);
 
-		if($debug == true)
-			$this->SendDebug(__FUNCTION__."[".__LINE__."]",$output,0);
+			if($debug == true)
+				$this->SendDebug(__FUNCTION__."[".__LINE__."]",$output,0);
 		
-		return $output;
+			return $output;
 				
-		}	
+			}	
 
 
 		//**************************************************************************
@@ -527,11 +529,44 @@
 
 		protected function SendData(string $Text)
 			{
-			// IPS_LogMessage("Device SEND",$Text);
+
+			ini_set("auto_detect_line_endings", true);
+
+			$this->SendDebug(__FUNCTION__."[".__LINE__."]","Send" ,0);
+
+			
+			
+			
+			$logdatei = IPS_GetLogDir() . "Withings/meas.log";
+
+			$lines = file ($logdatei);
+			$letzte_zeile = $lines[count($lines)-1]; 
+			$Text = $letzte_zeile;	
+			
+			// $this->SendDataToChildren(json_encode(Array("DataID" => "{33C19E7A-3386-09D7-DF5D-FE75EE51FF09}", "Buffer" => $Text)));
+
+
+			
+			$logdatei = IPS_GetLogDir() . "Withings/device.log";
+
+			$lines = file ($logdatei);
+			$letzte_zeile = $lines[count($lines)-1]; 
+			$Text = $letzte_zeile;	
+			// $this->SendDataToChildren(json_encode(Array("DataID" => "{A2756D8B-6F20-42A3-AD09-795AD631190C}", "Buffer" => $Text)));
+			// $this->SendDataToChildren(json_encode(Array("DataID" => "{33C19E7A-3386-09D7-DF5D-FE75EE51FF09}", "Buffer" => $Text)));
+
+
+			$logdatei = IPS_GetLogDir() . "Withings/sleep.log";
+
+			$lines = file ($logdatei);
+			$letzte_zeile = $lines[count($lines)-1]; 
+			$Text = $letzte_zeile;	
+			
 			$this->SendDataToChildren(json_encode(Array("DataID" => "{33C19E7A-3386-09D7-DF5D-FE75EE51FF09}", "Buffer" => $Text)));
 
-			$Text = '{"type":"Blood Pressure Monitor","battery":"medium","model":"Withings Blood Pressure Monitor V2","model_id":42,"timezone":"Europe\/Berlin","last_session_date":1572807461,"deviceid":"19f734a3ed8be9124ca5ce14a99701c1a7a453c1"},{"type":"Scale","battery":"medium","model":"Body Cardio","model_id":6,"timezone":"Europe\/Berlin","last_session_date":1596946581,"deviceid":"c7f35d19634ecb4f273ec42a4f4915b74315b2a9"},{"type":"Sleep Monitor","battery":"high","model":"Aura Sensor V2","model_id":63,"timezone":"Europe\/Berlin","last_session_date":1596953885,"deviceid":"bb9ce8701afe8d39fe17a8490bd90fc6738db872"},{"type":"Smart Connected Thermometer","battery":"medium","model":"Thermo","model_id":70,"timezone":"Europe\/Berlin","last_session_date":1596947710,"deviceid":"87f6241522588affc3b734842fcf208b24b3fee1"},{"type":"Blood Pressure Monitor","battery":"high","model":"BPM Core","model_id":44,"timezone":"Europe\/Berlin","last_session_date":1596947798,"deviceid":"261dc788ba02c62ddaad86c9c2867246750688cc"}';	
-			$this->SendDataToChildren(json_encode(Array("DataID" => "{A2756D8B-6F20-42A3-AD09-795AD631190C}", "Buffer" => $Text)));
+			$Text = "Hallo Welt";	
+			$this->SendDataToChildren(json_encode(Array("DataID" => "{75E6A836-6665-43AA-AC24-62975AF71171}", "Buffer" => $Text)));
+
 
 
 			}
@@ -554,21 +589,43 @@
 				  
 					  { "type": "Label"             , "label":  "Withings Health IO V1#1" },
 						  
-					  { "type": "CheckBox"          , "name" :  "Modulaktiv",  "caption": "Modul aktiv" },
 				   
+					  { "type": "Label"             , "label":  "User Data" },
+					  { "type": "Label"             , "label":  "Username" },
+					  { "type": "Label"             , "label":  "User Height" },
+
 					  { "type": "Label"             , "label":  "UserID : '.$userid.'"  },
 				  
 
-					  { "type": "IntervalBox"       , "name" :  "Intervall", "caption": "Sekunden" },
+	
+					   
 
-					  { "type": "CheckBox"      , "name"  : "Notifyaktiv" , "caption": "Benachrichtigungen aktivieren" },
-
-					  { "type": "Label", "caption": "Manuelle Eingabe einer Callback Adresse fuer Benachrichtigungen" },
-					  { "type": "ValidationTextBox", "name": "CallbackURL", "caption": "CallbackURL" }
-
-					  
+					  {
+						"type":  "ExpansionPanel", "caption": "Notification",
+						"items": 	[
+									{ "type": "CheckBox"      , "name"  : "Notifyaktiv" , "caption": "Benachrichtigungen aktivieren" },
+									{ "type": "Label", "caption": "Manuelle Eingabe einer Callback Adresse fuer Benachrichtigungen" },
+					  				{ "type": "ValidationTextBox", "name": "CallbackURL", "caption": "CallbackURL" }
+									]
+					  },
 				  
+					  {
+						"type":  "ExpansionPanel", "caption": "Settings",
+						"items": 	[
+							{ "type": "CheckBox"          , "name" :  "Modulaktiv",  "caption": "Modul aktiv" },
+							{ "type": "IntervalBox"       , "name" :  "Intervall", "caption": "Sekunden" }
+
+
+									  ]
+					  },
+				   
 				  
+					  {
+						"type":  "ExpansionPanel", "caption": "Expert Parameters",
+						"items": 	[
+									  {"type": "CheckBox", "name": "ShowMoreDebug", "caption": "Aktivate more Debug"}
+									]
+					  }
 				  
 				  
 					],
@@ -623,6 +680,7 @@
 
 		public function Send(string $Text)
 		{
+			$this->SendDebug(__FUNCTION__."[".__LINE__."]","Send" ,0);
 			$this->SendDataToChildren(json_encode(Array("DataID" => "{33C19E7A-3386-09D7-DF5D-FE75EE51FF09}", "Buffer" => $Text)));
 		}
 

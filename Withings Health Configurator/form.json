@@ -1,16 +1,50 @@
 {
-    "elements": [],
-    "actions": [
+    "elements": [
         {
-            "name": "Text",
-            "type": "ValidationTextBox",
-            "caption": "Text"
-        },
-        {
-            "type": "Button",
-            "caption": "Send",
-            "onClick": "WTH_UpdateDevices($id, $Text);"
+            "name": "RootId",
+            "type": "SelectCategory",
+            "caption": "Create under category"
         }
     ],
-    "status": []
+    "actions": [
+        {
+            "type": "Configurator",
+            "name": "Configuration",
+            "rowCount": 20,
+            "add": false,
+            "delete": false,
+            "sort": {
+                "column": "devicetyp",
+                "direction": "ascending"
+            },
+            "columns": [
+                {
+                    "caption": "Typ",
+                    "name": "devicetyp",
+                    "width": "100px"
+                },
+                {
+                    "caption": "Modell",
+                    "name": "devicemodel",
+                    "width": "100px"
+                },
+                {
+                    "caption": "Modell ID",
+                    "name": "devicemodelid",
+                    "width": "70px"
+                },
+                {
+                    "caption": "Date",
+                    "name": "devicedatestring",
+                    "width": "250px"
+                },
+                {
+                    "caption": "Device ID",
+                    "name": "deviceid",
+                    "width": "auto"
+                }
+            ],
+            "values": []
+        }
+    ]
 }

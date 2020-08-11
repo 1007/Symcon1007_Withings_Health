@@ -1,6 +1,50 @@
 {
     "translations": {
         "de": {
+
+            "Device Typ": "Geraete Typ",
+            "Device Model": "Geraete Modell",
+            "Device Model ID": "Geraete Modell ID",
+            "Device Timezone": "Geraete Zeitzone",
+            "Device Date": "Aktualisierung",
+            "Device ID": "Geraete ID",
+            
+            "Expert Parameters": "Experten Einstellungen",
+            "Aktivate more Debug": "Aktiviere erweiterte Debug Anzeige",
+
+            "Temperature":          "Temperatur",
+            "Body Temperature":     "Koerper Temperatur",
+            "Skin Temperature":     "Haut Temperatur",
+            "Weight":               "Gewicht",
+            "Fat Free Mass":        "Fettfreier Anteil",
+            "Fat Ratio":            "Fett Prozent",
+            "Fat Mass Weight":      "Fett Anteil",
+            "Muscle Mass":          "Muskelmasse",
+            "Hydration":            "Wasseranteil",
+            "Pulse Wave Velocity":  "Pulswellengeschwindigkeit",
+            "Bone Mass":            "Knochenmasse",
+            "VO2max":               "Maximale Sauerstoffaufnahme", 
+            "SPO2":                 "Sauerstoffsaettigung",
+            "Heart Pulse":          "Puls",
+
+            "Diastolic Blood Pressure": "Diastolic",
+            "Systolic Blood Pressure": "Systolic",
+
+            "Time spent awake":                 "Wachphasen",  
+            "Duration in state light sleep":    "Leichtschlafphasen",
+            "Duration in state deep sleep":     "Tiefschlafphasen",
+            "Number of times the user woke up": "Schlafunterbrechungen", 
+            "Time to sleep":                    "Einschlafzeit",
+            "Duration in state REM sleep":      "REM Schlafphasen",
+            "Time to wake up":                  "Aufwachzeit",
+            "Average heart rate":               "Herzschlag Durchschnitt",      
+            "Minimal heart rate":               "Herzschlag Minimal",      
+            "Maximal heart rate":               "Herzschlag Maximal",      
+            "Average respiration rate":         "Atmung Durchschnitt",      
+            "Minimal respiration rate":         "Atmung Minimal",      
+            "Maximal respiration rate":         "Atmung Maximal",      
+
+
             "Translation 1": "Übersetzung 1",
             "Translation 2": "Übersetzung 2"
         }
